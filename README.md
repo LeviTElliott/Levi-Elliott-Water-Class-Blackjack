@@ -41,3 +41,8 @@ If all players “bust” the dealer automatically wins & vice versus.
 a wireframe for Browser-based blackjack can be found at:
 https://www.figma.com/file/LglazChdxIpXzTVelsoY0G/Black-Jack?node-id=0%3A1
 
+as well as in the original folder containing the files for Browser-based Blackjack.
+
+//for users
+
+Browser-based blackjack is pretty straightforward. Place your bets from your cashstack, play your hand, and beat the dealer to reap the rewards!
