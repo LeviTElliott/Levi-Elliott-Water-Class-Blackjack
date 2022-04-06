@@ -16,4 +16,6 @@
 //conditional for blackjack here
 //deal cards to dealer
 
+//compare the results between dealer and player
+
 //pay out based on results
