@@ -37,6 +37,9 @@ a tie between player and dealer is a “push.” Player recieves their original 
 
 If all players “bust” the dealer automatically wins & vice versus.
 
+// tech run
+Browser-based blackjack functions mostly through JS javascript, with html indexing and css styling.
+
 //wireframe
 a wireframe for Browser-based blackjack can be found at:
 https://www.figma.com/file/LglazChdxIpXzTVelsoY0G/Black-Jack?node-id=0%3A1
