@@ -36,3 +36,8 @@ If a player or the dealer has a “blackjack” (a face card and an ace equating
 a tie between player and dealer is a “push.” Player recieves their original bet back but with no winnings.
 
 If all players “bust” the dealer automatically wins & vice versus.
+
+//wireframe
+a wireframe for Browser-based blackjack can be found at:
+https://www.figma.com/file/LglazChdxIpXzTVelsoY0G/Black-Jack?node-id=0%3A1
+
