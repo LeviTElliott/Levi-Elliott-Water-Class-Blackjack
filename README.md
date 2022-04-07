@@ -55,9 +55,15 @@ MVP's:
 Core functions of the game include:
 Having a deck that accounts for all 52 cards present,
 
+randomize cards that are pulled from deck
+
 pulling from that deck to a dealer's hand and the player's hand(s)
 
+sum of two cards per hand
+
 comparing the results between the dealer and player
+
+allow for post -deal options (stand, hit, etc...)
 
 adding a reset or 'new round' button to restack and shuffle the deck before starting over.
 
