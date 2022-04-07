@@ -8,7 +8,7 @@
 
 //check for blackjack
 //conditional for blackjack here
-//if blackjack, autowin, pay 3:2 on bet, and no post-deal play
+//(stretch) if blackjack, autowin, pay 3:2 on bet, and no post-deal play
 //if no blackjack, go to post deal choices:
 
 //player post deal choice

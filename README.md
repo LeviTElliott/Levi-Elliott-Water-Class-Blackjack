@@ -65,6 +65,7 @@ adding a reset or 'new round' button to restack and shuffle the deck before star
 
 (stretch) immplement a measure where, once the player is done, the dealer won't stop if they're still losing. (ex. if the player holds at '20' the dealer won't stop at 19, but will go for the 20/21 because they already know they'll lose otherwise)
 
+
 Stretch Goals:
 //
 option to account ace as an '11' or a '1',
