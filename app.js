@@ -4,10 +4,18 @@ var deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11,
             2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11,
             2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11,]
 
+function randomDraw() {
+     Math.floor((math.randmom * deck.length))
+}
 // deal 2 cards face up to players
+var playHand = (randomDraw(deck), randomDraw(deck));
 
 // deal 1 face up and 1 face down to dealer
-
+var dealerHand = (randomDraw(deck), randomDraw(deck));
+// check value of cards
+function checkValue() {
+    
+}
 //check for blackjack
 //conditional for blackjack here
 //(stretch) if blackjack, autowin, pay 3:2 on bet, and no post-deal play

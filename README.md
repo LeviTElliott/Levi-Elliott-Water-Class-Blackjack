@@ -67,10 +67,6 @@ allow for post -deal options (stand, hit, etc...)
 
 adding a reset or 'new round' button to restack and shuffle the deck before starting over.
 
-(stretch) ensure that the deck takes into account the cards already dealt so we don't potentially have more than four cards of each value in the playing field at any given time.
-
-(stretch) immplement a measure where, once the player is done, the dealer won't stop if they're still losing. (ex. if the player holds at '20' the dealer won't stop at 19, but will go for the 20/21 because they already know they'll lose otherwise)
-
 
 Stretch Goals:
 //
@@ -81,3 +77,7 @@ account for more than one player at the same time:
 allow for virtual "bets" within the game. (give stakes to each hand)
 
 account for the cards on the table when pulling from the deck. (don't just have a '2' pull, but have the '2 of hearts' pulled, so after that card is dealth there's only 51 more options in the index, as opposed to all 52).
+
+(stretch) ensure that the deck takes into account the cards already dealt so we don't potentially have more than four cards of each value in the playing field at any given time.
+
+(stretch) immplement a measure where, once the player is done, the dealer won't stop if they're still losing. (ex. if the player holds at '20' the dealer won't stop at 19, but will go for the 20/21 because they already know they'll lose otherwise)
