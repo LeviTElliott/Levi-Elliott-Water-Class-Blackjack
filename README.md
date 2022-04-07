@@ -49,3 +49,20 @@ as well as in the original folder containing the files for Browser-based Blackja
 //for users
 
 Browser-based blackjack is pretty straightforward. Place your bets from your cashstack, play your hand, and beat the dealer to reap the rewards!
+
+MVP's:
+// core functionality of the game
+Core functions of the game include:
+Having a deck that accounts for all 52 cards present,
+pulling from that deck to a dealer's hand and the player's hand(s)
+comparing the results between the dealer and player
+adding a reset or 'new round' button to restack and shuffle the deck before starting over.
+(stretch) ensure that the deck takes into account the cards already dealt so we don't potentially have more than four cards of each value in the playing field at any given time.
+
+
+Stretch Goals:
+//
+account ace as an '11' or a '1',
+account for more than one player at the same time:
+allow for virtual "bets" within the game.
+account for the cards on the table when pulling from the deck. (don't just have a '2' pull, but have the '2 of hearts' pulled, so after that card is dealth there's only 51 more options in the index, as opposed to all 52).

@@ -8,12 +8,22 @@
 
 //check for blackjack
 //conditional for blackjack here
+//if blackjack, autowin, pay 3:2 on bet, and no post-deal play
+//if no blackjack, go to post deal choices:
 
 //player post deal choice
-// deal cards to players where applicable
+//if stand, no more cards
+//if split, create two hands and play them both
+//if hit, draw another card (and loop back to either stand or another hit)
+//if doubledown, double the player's bet and draw one more card, then mark as stand.
+//if surrender, end hand, put cards away, and return half of the bet
 
 //check dealer for blackjack
 //conditional for blackjack here
+//if blackjack, end round and clear table.
+//if no blackjack go to deal cards to dealer
+
+
 //deal cards to dealer
 
 //compare the results between dealer and player
