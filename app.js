@@ -10,31 +10,33 @@ var dealerHand;
 
 //draw random cards
 function randomDraw(deck) {
-     var randomIndex = Math.floor((Math.randmom * deck.length));
-     return deck[randomIndex];
+     var randomCards = Math.floor((deck.length * Math.random()));
+     return deck[randomCards];
 }
 
 //start up the game
 function startUp() {
 // deal 2 cards to each
-     playerHand = [(randomDraw(deck)), (randomDraw(deck))];
+     playerHand = [randomDraw(deck), randomDraw(deck)];
      dealerHand = [randomDraw(deck), randomDraw(deck)];
 }
 
 // check value of cards dealt
-function checkValue() {
-     var sum = 0
-    for (i = 0; i = hand.length; i++){
-         sum = (sum + hand[i])
-    }
-    return sum;
+function checkValue(playerHand) {
+     var sum = playerHand[0] + playerHand[1];
+     return sum;
+}
+
+function checkValue(dealerHand) {
+     var sum = dealerHand[0] + dealerHand[1];
+     return sum;
 }
 
 startUp();
 console.log("Player is dealt " + playerHand);
 console.log("dealer is dealt " + dealerHand);
-console.log(checkValue[playerHand]);
-console.log(checkValue[dealerHand]);
+console.log(checkValue(playerHand));
+console.log(checkValue(dealerHand));
 
 //check for blackjack
 //conditional for blackjack here
