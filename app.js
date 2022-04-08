@@ -7,6 +7,8 @@ var deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11,
 //define variables for scope
 var playerHand;
 var dealerHand;
+var playerSum;
+var dealerSum;
 
 //draw random cards
 function randomDraw(deck) {
@@ -23,11 +25,11 @@ function startUp() {
 
 // check value of cards dealt
 function checkValue(playerHand) {
-     var sum = 0;
+     var playerSum = 0;
      for (i=0; i<playerHand.length; i++){
-          sum = (sum + playerHand[i]);
+          playerSum = (playerSum + playerHand[i]);
      }
-     return sum;
+     return playerSum;
 }
 
 function blackjack(playerHand) {
@@ -37,11 +39,11 @@ function blackjack(playerHand) {
 }
 
 function checkValue(dealerHand) {
-     var sum = 0;
+     var dealerSum = 0;
      for (i=0; i<dealerHand.length; i++){
-          sum = (sum + dealerHand[i]);
+          dealerSum = (dealerSum + dealerHand[i]);
      }
-     return sum;
+     return dealerSum;
 }
 
 startUp();
