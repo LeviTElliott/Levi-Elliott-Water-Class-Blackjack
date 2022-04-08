@@ -2,7 +2,7 @@
 var playerHand;
 var dealerHand;
 var playerSum;
-var dealerSum;
+var dealerHand;
 var hidden;
 var deck;
 
@@ -11,9 +11,10 @@ var canHit = true;
 
 
 //start game 
-startUp();
 buildDeck();
 shuffleDeck();
+startUp();
+
 // build and shuffle deck
 function buildDeck() {
      let amount = ['a', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'j', 'q', 'k',];
@@ -40,18 +41,18 @@ function shuffleDeck() {
 //start up the game
 function startUp() {
      hidden = deck.pop();
-     dealerSum += getAmount(hidden);
+     dealerHand += getAmount(hidden);
      // console.log(hidden);
-     // console.log(dealerSum);
-     while (dealerSum < 17) {
+     // console.log(dealerHand);
+     while (dealerHand < 17) {
           let cardImg = document.createElement("img");
           let card = deck.pop();
           //this is the line that works with the split technique in line 54
           cardImg.src ="./images/" + card +".webp";
-          dealerSum += getAmount(card);
+          dealerHand += getAmount(card);
           document.getElementById("dealer-hand").append(cardImg);
      }
-     console.log(dealerSum);
+     console.log(dealerHand);
 }
 
 //found this split technique to work with the label from the image at https://www.youtube.com/watch?v=bMYCWccL-3U (it's a bit cheesy but I like it)
