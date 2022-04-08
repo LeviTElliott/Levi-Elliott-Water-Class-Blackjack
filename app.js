@@ -5,6 +5,14 @@ var playerSum;
 var dealerSum;
 var deck;
 
+//varriable that allows for players to add cards via hit. (Just exists so I can turn it off later to make the game stop at bust)
+var canHit = true;
+
+
+//start game 
+startUp();
+buildDeck();
+shuffleDeck();
 // build and shuffle deck
 function buildDeck() {
      let ammount = ['a', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'j', 'q', 'k',];
@@ -16,7 +24,6 @@ function buildDeck() {
                deck.push(suite[i]+ "-" + ammount[j]);
           }
      }
-     console.log(deck);
 }
 
 function shuffleDeck() {
@@ -31,9 +38,24 @@ function shuffleDeck() {
 
 //start up the game
 function startUp() {
-// deal 2 cards to each
-     playerHand = [randomDraw(deck), randomDraw(deck)];
-     dealerHand = [randomDraw(deck), randomDraw(deck)];
+// deal 2 cards to player and 1 hidden 1 showing card to dealer
+     hidden = deck.pop();
+     dealerSum += getAmmount(hidden);
+}
+
+//found this split technique to work with the label from the image at https://www.youtube.com/watch?v=bMYCWccL-3U (it's a bit cheesy but I like it)
+function getAmmount(card) {
+     let data= card.split("-")
+     let ammount = data[0];
+     //don't forget to set value for ace different from rest of face cards
+     if (isNaN(ammount)) {
+          if (ammount =='a') {
+               return 11;
+          }
+          return 10;
+     }
+
+     return parseInt(ammount);
 }
 
 // check value of cards dealt
@@ -58,8 +80,6 @@ function checkValue(dealerHand) {
      }
      return dealerSum;
 }
-
-startUp();
 
 //check for blackjack
 //conditional for blackjack here
