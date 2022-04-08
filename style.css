@@ -11,19 +11,22 @@ body {
     text-align: center;
 }
 
-.dealer-set img {
+#dealer-hand img {
     height: 150px;
     width: 125px;
     margin: 1px;
 }
-.player-set img {
+#player-hand img {
+    height: 150px;
+    width: 125px;
+    margin: 1px;
+}
+.hidden img {
     height: 150px;
     width: 125px;
     margin: 1px;
 }
 
 button {
-    width: 100px;
-    height: 50px;
-    font-size: 25px;
+    font-size: 20px;
 }

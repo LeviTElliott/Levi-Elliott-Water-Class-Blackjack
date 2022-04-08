@@ -8,25 +8,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id = "dealer-set">
-    <h2>Dealer's Cards:</h2>
+    <h2>Dealer's Cards: <span id="dealer-sum"></span></h2>
     <div id = "dealer-hand">
         <img id="hidden" src="/images/back of card.jpg">
     </div>
-    <h4>Dealer's card value</h4>
-    <div id = "dealer-hand-value"></div>
-    </div>
+    <!-- <h4>Dealer's card value</h4>
+    <div id = "dealer-hand-value"></div> -->
 
-    <div id ="player-set">
-    <h2>Player's Cards: </h2>
+    <h2>Player's Cards: <span id= "player-sum"></span> </h2>
     <div id="player-hand"></div>
-    <h4> Player's card value:</h4>
-    <div id="player-hand-value"></div>
-    </div>
+    <!-- <h4> Player's card value:</h4>
+    <div id="player-hand-value"></div> -->
 
-    <button onclick="hit()">Hit!</button>
+    <button id="hit">Hit!</button>
     <button id ="stand" onclick="stand()">Stand!</button>
-    <div id ="bust"></div>
+    <div id = gameOver></div>
     <script src="app.js"></script>
 </body>
 </html>
