@@ -4,24 +4,22 @@ var deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11,
             2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11,
             2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11,]
 
-
-function randomDraw() {
-     Math.floor((math.randmom * deck.length))
-}
-
-//define variables for scope stuff
+//define variables for scope
 var playerHand;
 var dealerHand;
+
+//draw random cards
+function randomDraw(deck) {
+     var randomIndex = Math.floor((Math.randmom * deck.length));
+     return deck[randomIndex];
+}
+
 //start up the game
 function startUp() {
-// deal 2 cards face up to players
-playerHand =[(randomDraw(deck)), (randomDraw(deck))];
-// deal 1 face up and 1 face down to dealer
-dealerHand = [(randomDraw(deck), randomDraw(deck))];
+// deal 2 cards to each
+     playerHand = [(randomDraw(deck)), (randomDraw(deck))];
+     dealerHand = [randomDraw(deck), randomDraw(deck)];
 }
-console.log("Player is dealt " + playerHand);
-console.log("dealer is dealt " + dealerHand);
-
 
 // check value of cards dealt
 function checkValue() {
@@ -32,6 +30,9 @@ function checkValue() {
     return sum;
 }
 
+startUp();
+console.log("Player is dealt " + playerHand);
+console.log("dealer is dealt " + dealerHand);
 console.log(checkValue[playerHand]);
 console.log(checkValue[dealerHand]);
 
