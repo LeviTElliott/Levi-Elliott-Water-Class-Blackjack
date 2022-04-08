@@ -1,20 +1,33 @@
-// shuffle deck
-var deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11,
-            2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11,
-            2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11,
-            2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11,]
-
 //define variables for scope
 var playerHand;
 var dealerHand;
 var playerSum;
 var dealerSum;
+var deck;
 
-//draw random cards
-function randomDraw(deck) {
-     var randomCards = Math.floor((deck.length * Math.random()));
-     return deck[randomCards];
+// build and shuffle deck
+function buildDeck() {
+     let ammount = ['a', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'j', 'q', 'k',];
+     let suite = ['c', 'd', 'h', 's',];
+     deck = [];
+     
+     for (let i=0; i<suite.length; i++) {
+          for (let j=0; j<ammount.length; j++) {
+               deck.push(suite[i]+ "-" + ammount[j]);
+          }
+     }
+     console.log(deck);
 }
+
+function shuffleDeck() {
+     for (let i=0; i < deck.length; i++) {
+          let j = Math.floor(Math.random() * deck.length);
+          let temp= deck[i];
+          deck[i] = deck[j];
+          deck[j] = temp;
+     }
+}
+//draw random cards
 
 //start up the game
 function startUp() {
