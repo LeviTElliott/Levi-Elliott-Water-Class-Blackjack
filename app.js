@@ -33,10 +33,6 @@ function checkValue(dealerHand) {
 }
 
 startUp();
-console.log("Player is dealt " + playerHand);
-console.log("dealer is dealt " + dealerHand);
-console.log(checkValue(playerHand));
-console.log(checkValue(dealerHand));
 
 //check for blackjack
 //conditional for blackjack here
@@ -47,13 +43,16 @@ console.log(checkValue(dealerHand));
 //if hit, draw another card (and loop back to either stand or bust)
 function hit() {
      playerHand.push(randomDraw(deck));
-     console.log(hit);
-     console.log("new Player Hand is " + playerHand)
-     if (checkValue(playerHand) >21){
+     console.log("Player's new hand is: " + playerHand);
+     if(checkValue(playerHand) >21){
           console.log("BUST!");
      }
 }
 //if stand, no more cards
+
+function stand() {
+     console.log("Player stands at: " + checkValue(playerHand), "with " + playerHand);
+}
 //if split, create two hands and play them both
 //if doubledown, double the player's bet and draw one more card, then mark as stand.
 //if surrender, end hand, put cards away, and return half of the bet
@@ -69,3 +68,8 @@ function hit() {
 //compare the results between dealer and player
 
 //pay out based on results
+
+document.getElementById("player-hand").innerHTML = playerHand;
+document.getElementById("player-hand-value").innerHTML = checkValue(playerHand);
+document.getElementById("dealer-hand").innerHTML = dealerHand;
+document.getElementById("dealer-hand-value").innerHTML = checkValue(dealerHand);
