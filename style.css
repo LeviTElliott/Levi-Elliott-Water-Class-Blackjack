@@ -8,4 +8,22 @@ button{
 body {
     background-color: darkgreen;
     color: yellow;
+    text-align: center;
+}
+
+.dealer-set img {
+    height: 150px;
+    width: 125px;
+    margin: 1px;
+}
+.player-set img {
+    height: 150px;
+    width: 125px;
+    margin: 1px;
+}
+
+button {
+    width: 100px;
+    height: 50px;
+    font-size: 25px;
 }

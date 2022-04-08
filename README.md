@@ -17,15 +17,9 @@ Step Three: players play their hands (from left to right).
 
 Player options post deal:
 
-stand - call it after 2 cards
-
-split - split a pair of cards with the same values (including K &q or J& K etc)
+stand - Player holds at their current card value and hands their turn over to the dealer
 
 hit - take another card
-
-double down - take only 1 additional card, but double your bet. no further additions allowed.
-
-surrender - folding, but allows you half your original bet back.
 
 
 //outlying conditionals 

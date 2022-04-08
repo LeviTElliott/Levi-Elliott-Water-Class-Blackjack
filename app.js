@@ -30,6 +30,12 @@ function checkValue(playerHand) {
      return sum;
 }
 
+function blackjack(playerHand) {
+     if (checkValue(playerHand) =21) {
+          document.getElementById("bust").innerHTML = "BLACKJACK!";
+     }
+}
+
 function checkValue(dealerHand) {
      var sum = 0;
      for (i=0; i<dealerHand.length; i++){
@@ -49,9 +55,9 @@ startUp();
 //if hit, draw another card (and loop back to either stand or bust)
 function hit() {
      playerHand.push(randomDraw(deck));
-     console.log("Player's new hand is: " + playerHand)
+     console.log(playerHand);
      if(checkValue(playerHand) > 21){
-          console.log("BUST!");
+          document.getElementById("bust").innerHTML = "BUST!";
      }
 }
 //if stand, no more cards
@@ -59,21 +65,6 @@ function hit() {
 function stand() {
      console.log("Player stands at: " + checkValue(playerHand), "with " + playerHand);
 }
-//if split, create two hands and play them both
-//if doubledown, double the player's bet and draw one more card, then mark as stand.
-//if surrender, end hand, put cards away, and return half of the bet
-
-//check dealer for blackjack
-//conditional for blackjack here
-//if blackjack, end round and clear table.
-//if no blackjack go to deal cards to dealer
-
-
-//deal cards to dealer
-
-//compare the results between dealer and player
-
-//pay out based on results
 
 document.getElementById("player-hand").innerHTML = playerHand;
 document.getElementById("player-hand-value").innerHTML = checkValue(playerHand);
