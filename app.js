@@ -15,9 +15,9 @@ var dealerHand;
 //start up the game
 function startUp() {
 // deal 2 cards face up to players
-var playerHand = (randomDraw(deck), randomDraw(deck));
+var playerHand =[(randomDraw(deck)), (randomDraw(deck))];
 // deal 1 face up and 1 face down to dealer
-var dealerHand = (randomDraw(deck), randomDraw(deck));
+var dealerHand = [(randomDraw(deck), randomDraw(deck))];
 }
 console.log("Player is dealt " + playerHand);
 console.log("dealer is dealt " + dealerHand);
