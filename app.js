@@ -23,12 +23,18 @@ function startUp() {
 
 // check value of cards dealt
 function checkValue(playerHand) {
-     var sum = playerHand[0] + playerHand[1];
+     var sum = 0;
+     for (i=0; i<playerHand.length; i++){
+          sum = (sum + playerHand[i]);
+     }
      return sum;
 }
 
 function checkValue(dealerHand) {
-     var sum = dealerHand[0] + dealerHand[1];
+     var sum = 0;
+     for (i=0; i<dealerHand.length; i++){
+          sum = (sum + dealerHand[i]);
+     }
      return sum;
 }
 
@@ -43,8 +49,8 @@ startUp();
 //if hit, draw another card (and loop back to either stand or bust)
 function hit() {
      playerHand.push(randomDraw(deck));
-     console.log("Player's new hand is: " + playerHand);
-     if(checkValue(playerHand) >21){
+     console.log("Player's new hand is: " + playerHand)
+     if(checkValue(playerHand) > 21){
           console.log("BUST!");
      }
 }
