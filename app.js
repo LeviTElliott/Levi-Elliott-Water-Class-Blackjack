@@ -44,9 +44,17 @@ console.log(checkValue(dealerHand));
 //if no blackjack, go to post deal choices:
 
 //player post deal choice
+//if hit, draw another card (and loop back to either stand or bust)
+function hit() {
+     playerHand.push(randomDraw(deck));
+     console.log(hit);
+     console.log("new Player Hand is " + playerHand)
+     if (checkValue(playerHand) >21){
+          console.log("BUST!");
+     }
+}
 //if stand, no more cards
 //if split, create two hands and play them both
-//if hit, draw another card (and loop back to either stand or another hit)
 //if doubledown, double the player's bet and draw one more card, then mark as stand.
 //if surrender, end hand, put cards away, and return half of the bet
 
