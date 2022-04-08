@@ -9,6 +9,9 @@ function randomDraw() {
      Math.floor((math.randmom * deck.length))
 }
 
+//define variables for scope stuff
+var playerHand;
+var dealerHand;
 //start up the game
 function startUp() {
 // deal 2 cards face up to players
