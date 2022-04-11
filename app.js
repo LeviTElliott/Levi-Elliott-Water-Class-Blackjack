@@ -51,14 +51,38 @@ function startUp() {
      }
      // console.log(dealerHand);
      for (let i = 0; i < 2; i++) {
+          //draw card to the player (can use in hit function as well)
          let cardImg = document.createElement("img");
          let card = deck.pop();
          cardImg.src = "./images/" + card + ".webp";
          playerHand += getAmount(card);
          document.getElementById("player-hand").append(cardImg);
      }
-     console.log(playerHand);
+     // console.log(playerHand);
 
+
+     //hit and stand function
+
+     document.getElementById("hit").addEventListener("click", drawCard);
+     document.getElementById("stand").addEventListener("click", stop);
+
+     function drawCard() {
+          if (playerHand > 21) {
+               return;
+          }
+          let cardImg = document.createElement("img");
+          let card = deck.pop();
+          cardImg.src = "./images/" + card + ".webp";
+          playerHand += getAmount(card);
+          document.getElementById("player-hand").append(cardImg);
+     }
+
+     function stop() {
+          //stop players drawing cards
+          canHit = false
+          //reveal hidden card
+          document.getElementById("hidden").src = ("./images/" + card + ".webp");
+     }
 //found this split technique to work with the label from the image at https://www.youtube.com/watch?v=bMYCWccL-3U (it's a bit cheesy but I like it) (originally had different image names but couldn't get the split right)
 function getAmount(card) {
      let data = card.split("-");
@@ -70,5 +94,6 @@ function getAmount(card) {
          }
          return 10;
      }
-     return parseInt(value);
-}}
+     return parseInt(value); //careful to get values correct. If it reads as "c-2" instead of "2-c" it will keep giving out 20 as value
+}
+}
