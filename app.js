@@ -1,6 +1,6 @@
 //define variables for scope
-var playerHand;
-var dealerHand;
+var playerHand = 0;
+var dealerHand = 0;
 var hidden;
 var deck;
 
@@ -30,7 +30,7 @@ function buildDeck() {
 function shuffleDeck() {
      for (let i=0; i < deck.length; i++) {
           let j = Math.floor(Math.random() * deck.length);
-          let temp= deck[i];
+          let temp = deck[i];
           deck[i] = deck[j];
           deck[j] = temp;
      }
@@ -40,33 +40,30 @@ function shuffleDeck() {
 
 //start up the game
 function startUp() {
-     dealerHand = deck.pop();
+     hidden = deck.pop();
+     dealerHand += getAmount(hidden);
      // console.log(hidden);
-// }
-     // console.log(dealerHand);
+     // console.log(dealerSum);
      while (dealerHand < 17) {
-          let cardImg = document.createElement("img");
-          let card = deck.pop();
-          //this is the line that works with the split technique in line 54
-          cardImg.src ="./images/" + card +".webp";
-          dealerHand += getAmount(card);
-          document.getElementById("dealer-hand").append(cardImg);
+         //<img src="./cards/4-C.png">
+         let cardImg = document.createElement("img");
+         let card = deck.pop();
+         cardImg.src = "./images/" + card + ".webp";
+         dealerHand += getAmount(card);
+         document.getElementById("dealer-hand").append(cardImg);
      }
-     // console.log(dealerHand);
-}
+     console.log(dealerHand);
 
 //found this split technique to work with the label from the image at https://www.youtube.com/watch?v=bMYCWccL-3U (it's a bit cheesy but I like it)
-function getAmount() {
-     let data = dealerHand.split("-");
-     let amount = data[0];
-     // console.log(data);
-     //don't forget to set value for ace different from rest of face cards
-     if (isNaN(amount)) {
-          if (amount =='A') {
-               return 11;
-          } else {
-          return 10;
-          }
+function getAmount(card) {
+     let data = card.split("-");
+     let value = data[0];
+ 
+     if (isNaN(value)) {
+         if (value == "A") {
+             return 11;
+         }
+         return 10;
      }
-     return parseInt(amount);
-}
+     return parseInt(value);
+}}
