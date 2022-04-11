@@ -1,8 +1,6 @@
 //define variables for scope
 var playerHand;
 var dealerHand;
-var playerSum;
-var dealerHand;
 var hidden;
 var deck;
 
@@ -17,15 +15,16 @@ startUp();
 
 // build and shuffle deck
 function buildDeck() {
-     let amount = ['a', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'j', 'q', 'k',];
-     let suite = ['c', 'd', 'h', 's',];
+     let amount = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+     let suite = ["C", "D", "H", "S"];
      deck = [];
      
      for (let i=0; i<suite.length; i++) {
           for (let j=0; j<amount.length; j++) {
-               deck.push(suite[i]+ "-" + amount[j]);
+               deck.push(suite[i] + "-" + amount[j]);
           }
      }
+     // console.log(deck);
 }
 
 function shuffleDeck() {
@@ -35,14 +34,15 @@ function shuffleDeck() {
           deck[i] = deck[j];
           deck[j] = temp;
      }
+     //should be random now
+     // console.log(deck);
 }
-//draw random cards
 
 //start up the game
 function startUp() {
-     hidden = deck.pop();
-     dealerHand += getAmount(hidden);
+     dealerHand = deck.pop();
      // console.log(hidden);
+// }
      // console.log(dealerHand);
      while (dealerHand < 17) {
           let cardImg = document.createElement("img");
@@ -52,21 +52,21 @@ function startUp() {
           dealerHand += getAmount(card);
           document.getElementById("dealer-hand").append(cardImg);
      }
-     console.log(dealerHand);
+     // console.log(dealerHand);
 }
 
 //found this split technique to work with the label from the image at https://www.youtube.com/watch?v=bMYCWccL-3U (it's a bit cheesy but I like it)
-function getAmount(card) {
-     let data = card.split("-");
-     let amount = data[0]
-
+function getAmount() {
+     let data = dealerHand.split("-");
+     let amount = data[0];
+     // console.log(data);
      //don't forget to set value for ace different from rest of face cards
      if (isNaN(amount)) {
-          if (amount =='a') {
+          if (amount =='A') {
                return 11;
-          }
+          } else {
           return 10;
+          }
      }
-
      return parseInt(amount);
 }
