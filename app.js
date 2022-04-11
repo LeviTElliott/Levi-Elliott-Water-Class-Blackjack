@@ -21,7 +21,7 @@ function buildDeck() {
      
      for (let i=0; i<suite.length; i++) {
           for (let j=0; j<amount.length; j++) {
-               deck.push(suite[i] + "-" + amount[j]);
+               deck.push(amount[j] + "-" + suite[i]);
           }
      }
      // console.log(deck);
