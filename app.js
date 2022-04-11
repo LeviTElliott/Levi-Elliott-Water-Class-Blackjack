@@ -42,19 +42,24 @@ function shuffleDeck() {
 function startUp() {
      hidden = deck.pop();
      dealerHand += getAmount(hidden);
-     // console.log(hidden);
-     // console.log(dealerSum);
      while (dealerHand < 17) {
-         //<img src="./cards/4-C.png">
          let cardImg = document.createElement("img");
          let card = deck.pop();
          cardImg.src = "./images/" + card + ".webp";
          dealerHand += getAmount(card);
          document.getElementById("dealer-hand").append(cardImg);
      }
-     console.log(dealerHand);
+     // console.log(dealerHand);
+     for (let i = 0; i < 2; i++) {
+         let cardImg = document.createElement("img");
+         let card = deck.pop();
+         cardImg.src = "./images/" + card + ".webp";
+         playerHand += getAmount(card);
+         document.getElementById("player-hand").append(cardImg);
+     }
+     console.log(playerHand);
 
-//found this split technique to work with the label from the image at https://www.youtube.com/watch?v=bMYCWccL-3U (it's a bit cheesy but I like it)
+//found this split technique to work with the label from the image at https://www.youtube.com/watch?v=bMYCWccL-3U (it's a bit cheesy but I like it) (originally had different image names but couldn't get the split right)
 function getAmount(card) {
      let data = card.split("-");
      let value = data[0];
