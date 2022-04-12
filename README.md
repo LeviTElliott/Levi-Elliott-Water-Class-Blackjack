@@ -44,6 +44,8 @@ as well as in the original folder containing the files for Browser-based Blackja
 
 Browser-based blackjack is pretty straightforward. Place your bets from your cashstack, play your hand, and beat the dealer to reap the rewards!
 
+Screenshots for end game results may be found in the screenshots folder.
+
 MVP's:
 // core functionality of the game
 Core functions of the game include:
