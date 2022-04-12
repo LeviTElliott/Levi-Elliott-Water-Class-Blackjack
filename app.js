@@ -65,6 +65,7 @@ function startUp() {
 
      document.getElementById("hit").addEventListener("click", drawCard);
      document.getElementById("stand").addEventListener("click", stop);
+     document.getElementById("reset").addEventListener("click", resetForm);
 
 
      //draw card until over 21
@@ -101,6 +102,10 @@ function startUp() {
           document.getElementById("dealer-sum").innerText = dealerHand;
           document.getElementById("player-sum").innerText = playerHand;
           document.getElementById("gameOver").innerText = message;
+     }
+
+     function resetForm() {
+          location.reload();
      }
 //found this split technique to work with the label from the image at https://www.youtube.com/watch?v=bMYCWccL-3U (it's a bit cheesy but I like it) (originally had different image names but couldn't get the split right)
 function getAmount(card) {
