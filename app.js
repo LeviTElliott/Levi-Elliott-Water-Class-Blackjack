@@ -8,7 +8,7 @@ var deck;
 var canHit = true;
 
 
-//start game 
+//start game (make sure to build and shuffle deck before starting game)
 buildDeck();
 shuffleDeck();
 startUp();
@@ -58,14 +58,16 @@ function startUp() {
          playerHand += getAmount(card);
          document.getElementById("player-hand").append(cardImg);
      }
-     // console.log(playerHand);
+     console.log(playerHand);
 
 
-     //hit and stand function
+     //hit and stand functions for buttons
 
      document.getElementById("hit").addEventListener("click", drawCard);
      document.getElementById("stand").addEventListener("click", stop);
 
+
+     //draw card until over 21
      function drawCard() {
           if (playerHand > 21) {
                return;
@@ -81,7 +83,24 @@ function startUp() {
           //stop players drawing cards
           canHit = false
           //reveal hidden card
-          document.getElementById("hidden").src = ("./images/" + card + ".webp");
+          document.getElementById("hidden").src = ("./images/" + hidden + ".webp");
+          //display scores
+          let message = ""
+
+          if (playerHand > 21) {
+               message = "You bust, dealer wins."
+          } else if (dealerHand >21) {
+               message = "Dealer busts, you win!"
+          } else if (dealerHand == playerHand) {
+               message = "draw. Try again"
+          } else if (dealerHand < playerHand) {
+               message = "You win! Grat job."
+          } else if (dealerHand > playerHand) {
+               message = "You lose, try again."
+          }
+          document.getElementById("dealer-sum").innerText = dealerHand;
+          document.getElementById("player-sum").innerText = playerHand;
+          document.getElementById("gameOver").innerText = message;
      }
 //found this split technique to work with the label from the image at https://www.youtube.com/watch?v=bMYCWccL-3U (it's a bit cheesy but I like it) (originally had different image names but couldn't get the split right)
 function getAmount(card) {
