@@ -3,7 +3,6 @@ var playerHand = 0;
 var dealerHand = 0;
 var hidden;
 var deck;
-var acePresent;
 var card;
 
 //varriable that allows for players to add cards via hit. (Just exists so I can turn it off later to make the game stop at bust)
@@ -61,7 +60,7 @@ function startUp() {
          playerHand += getAmount(card);
          document.getElementById("player-hand").append(cardImg);
      }
-     console.log(playerHand);
+     // console.log(playerHand);
 
 
      //hit and stand functions for buttons
