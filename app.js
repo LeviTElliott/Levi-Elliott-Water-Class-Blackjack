@@ -3,6 +3,8 @@ var playerHand = 0;
 var dealerHand = 0;
 var hidden;
 var deck;
+var acePresent;
+var card;
 
 //varriable that allows for players to add cards via hit. (Just exists so I can turn it off later to make the game stop at bust)
 var canHit = true;
@@ -42,7 +44,7 @@ function shuffleDeck() {
 function startUp() {
      hidden = deck.pop();
      dealerHand += getAmount(hidden);
-     while (dealerHand < 17) {
+     while (dealerHand < 17 || dealerHand < playerHand) {
          let cardImg = document.createElement("img");
          let card = deck.pop();
          cardImg.src = "./images/" + card + ".webp";
@@ -71,7 +73,8 @@ function startUp() {
      //draw card until over 21
      function drawCard() {
           if (playerHand > 21) {
-               return;
+               canHit = false;
+               return message ="bust. Dealer wins, try again.";
           }
           let cardImg = document.createElement("img");
           let card = deck.pop();
@@ -88,12 +91,14 @@ function startUp() {
           //display scores
           let message = ""
 
-          if (playerHand > 21) {
-               message = "You bust, dealer wins."
+          if (playerHand == 21) {
+               message = "Blackjack! You Win!"
           } else if (dealerHand >21) {
                message = "Dealer busts, you win!"
           } else if (dealerHand == playerHand) {
                message = "draw. Try again"
+          } else if (playerHand > 21) {
+               message = "Bust. Dealer Wins."
           } else if (dealerHand < playerHand) {
                message = "You win! Grat job."
           } else if (dealerHand > playerHand) {
@@ -121,3 +126,4 @@ function getAmount(card) {
      return parseInt(value); //careful to get values correct. If it reads as "c-2" instead of "2-c" it will keep giving out 20 as value
 }
 }
+

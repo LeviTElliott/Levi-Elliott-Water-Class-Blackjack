@@ -4,6 +4,10 @@ It's blackjack for your browser!
 
 Brwoser-based Blackjack follows the common rules for blackjack such as those found at https://www.blackjackapprenticeship.com/how-to-play-blackjack/
 
+Broser-based Blackjack can be found at:
+https://levitelliott.github.io/Levi-Elliott-Water-Class-Blackjack/
+
+
 //Goal of the Game
 The Goal is to have your player’s card count total at or as close to “21” as possible. In the end, the participant (dealer included) with the highest “total” under 21 wins the round.
 
