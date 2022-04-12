@@ -11,14 +11,14 @@ body {
     text-align: center;
 }
 
-#dealer-hand img {
-    height: 150px;
-    width: 125px;
+.dealer-hand img {
+    height: 120px;
+    width: 105px;
     margin: 1px;
 }
-#player-hand img {
-    height: 150px;
-    width: 125px;
+.player-hand img {
+    height: 120px;
+    width: 105px;
     margin: 1px;
 }
 .hidden img {
@@ -29,4 +29,12 @@ body {
 
 button {
     font-size: 20px;
+    margin: auto;
+}
+.gridButtons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#gameOver {
+    font-size: 80px;
 }

@@ -32,6 +32,7 @@ function buildDeck() {
 function shuffleDeck() {
      for (let i=0; i < deck.length; i++) {
           let j = Math.floor(Math.random() * deck.length);
+          //swap index positions (i & j) to randomize deck
           let temp = deck[i];
           deck[i] = deck[j];
           deck[j] = temp;
@@ -93,12 +94,12 @@ function startUp() {
 
           if (playerHand == 21) {
                message = "Blackjack! You Win!"
-          } else if (dealerHand >21) {
-               message = "Dealer busts, you win!"
+          } else if (playerHand >21) {
+               message = "Bust. Dealer wins."
           } else if (dealerHand == playerHand) {
                message = "draw. Try again"
-          } else if (playerHand > 21) {
-               message = "Bust. Dealer Wins."
+          } else if (dealerHand > 21) {
+               message = "Dealer busts! You win!"
           } else if (dealerHand < playerHand) {
                message = "You win! Grat job."
           } else if (dealerHand > playerHand) {
@@ -112,18 +113,18 @@ function startUp() {
      function resetForm() {
           location.reload();
      }
-//found this split technique to work with the label from the image at https://www.youtube.com/watch?v=bMYCWccL-3U (it's a bit cheesy but I like it) (originally had different image names but couldn't get the split right)
+//found this split technique to work with the label from the image at https://www.youtube.com/watch?v=bMYCWccL-3U (it's a bit cheesy but I like it) (originally had different image names but couldn't get the split the values correctly)
 function getAmount(card) {
      let data = card.split("-");
      let value = data[0];
- 
+ //value of face cards a =11 everything else = 10
      if (isNaN(value)) {
          if (value == "A") {
              return 11;
          }
          return 10;
      }
-     return parseInt(value); //careful to get values correct. If it reads as "c-2" instead of "2-c" it will keep giving out 20 as value
+     return parseInt(value); //careful to get values correct. If it reads as "c-2" instead of "2-c" it will keep giving out 10 as value
 }
 }
 
