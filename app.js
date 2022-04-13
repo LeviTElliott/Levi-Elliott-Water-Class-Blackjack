@@ -15,8 +15,6 @@ shuffleDeck();
 startUp();
 
 // build and shuffle deck
-
-// cite https://w3collective.com/random-playing-card-javascript/ for help with card deck
 function buildDeck() {
      let amount = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
      let suite = ["C", "D", "H", "S"];
@@ -76,7 +74,7 @@ function startUp() {
      function drawCard() {
           if (playerHand > 21) {
                canHit = false;
-               return message ="bust. Dealer wins, try again.";
+               return message ="Bust. Dealer wins, try again.";
           }
           let cardImg = document.createElement("img");
           let card = deck.pop();
