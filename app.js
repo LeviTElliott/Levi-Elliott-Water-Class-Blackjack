@@ -114,7 +114,6 @@ function startUp() {
      function resetForm() {
           location.reload();
      }
-//found this split technique to work with the label from the image at https://www.youtube.com/watch?v=bMYCWccL-3U (it's a bit cheesy but I like it) (originally had different image names but couldn't get the split the values correctly)
 function getAmount(card) {
      let data = card.split("-");
      let value = data[0];

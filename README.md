@@ -81,3 +81,8 @@ account for the cards on the table when pulling from the deck. (don't just have 
 (stretch) ensure that the deck takes into account the cards already dealt so we don't potentially have more than four cards of each value in the playing field at any given time.
 
 (stretch) immplement a measure where, once the player is done, the dealer won't stop if they're still losing. (ex. if the player holds at '20' the dealer won't stop at 19, but will go for the 20/21 because they already know they'll lose otherwise)
+
+//citations
+// cite https://w3collective.com/random-playing-card-javascript/ for help with card deck
+
+//found this split technique to work with the label from the image at https://www.youtube.com/watch?v=bMYCWccL-3U (it's a bit cheesy but I like it) (originally had different image names but couldn't get the split the values correctly)
