@@ -13,16 +13,16 @@ The Goal is to have your player’s card count total at or as close to “21” 
 
 
 // steps taken during rounds
-Step one: Players place wager
+Step one: Players place wager (stretch)
 
-Step two: Dealer deals cards. 1 card face up, to each player, one card face down to self, another card face up to each player, one card face up to self. Players can see 2 cards of each player, and only 1 of the dealer’s cards
+Step two: Dealer deals cards. 1 card face up, to each player, one card face down to self, another card face up to each player, one card face up to self. Players can see 2 cards of each player, and all but 1 of the dealer’s cards
 
 Step Three: players play their hands (from left to right).
 
 Player options post deal:
 
 stand - Player holds at their current card value and hands their turn over to the dealer
-
+(when you're satisfied with your hand, call stand)
 hit - take another card
 
 
